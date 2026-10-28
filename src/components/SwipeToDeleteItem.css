@@ -1,0 +1,47 @@
+.swipe-wrapper {
+  position: relative;
+  /* overflow: hidden; */
+  margin: 5px 0;
+}
+.delete-btn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 0;
+  width: 80px;
+  background: var(--error);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 20px;
+  height: calc(100% - 3px);
+}
+.edit-btn {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 0;
+  width: 80px;
+  background: var(--cool);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 20px;
+  height: calc(100% - 3px);
+}
+.swipe-item {
+  background-color: var(--bg-ll);
+  color: var(--text);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease-out;
+  touch-action: pan-y;
+  will-change: transform;
+}

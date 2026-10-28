@@ -1,0 +1,35 @@
+.container {
+    /* width: 90%; */
+    justify-self: center;
+    /* margin-bottom: 5rem; */
+}
+.button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.loginTitle {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.loginTitle span {
+    font-size: 0.8rem;
+}
+.mainCont {
+    background-image: url(/imgs/bg-login.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: calc(100vh - 4rem); */
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: -2rem -1rem 0 -1rem;
+}
+:global(#root) {
+    /* padding: 0 !important; */
+    min-height: 100vh !important;
+}

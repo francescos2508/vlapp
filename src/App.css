@@ -1,0 +1,394 @@
+/* ==========================
+   App.css - Global Styles
+   ========================== */
+
+:root {
+  /* === Vlapp Core Colors === */
+  --primary-d: #B33333;        /* Main red */
+  --primary-l: #D95B5B;  /* Lighter red for hover or accents */
+  --gold: #FFB300;         /* Gold accent */
+
+  /* === Cool Accent === */
+  --cool: #3B82F6;             /* Vibrant blue accent (tone freddo) */
+  --cool-l: #60A5FA;           /* Light blue hover variant */
+  
+  /* === Backgrounds === */
+  --bg: #1E1E1E;     /* App background */
+  --bg-l: #2A2A2A;        /* Cards, panels */
+  --bg-ll: #333030;
+  
+  /* === Text === */
+  --text: #E0E0E0;   /* Main text */
+  --text-2: #A0A0A0; /* Secondary text */
+  
+  /* === Status === */
+  --success: #66BB6A;        /* Positive actions */
+  --error: red;          /* Errors or alerts */
+  --error-l: #E57373;          /* Errors or alerts */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+body * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+p, span {
+  /* margin: 5px 0 15px 0; */
+  line-height: 1.5;
+}
+/* label {
+  font-size: 0.7rem;
+  padding-left: 11px;
+} */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--primary-d);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+div.copyright {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+.page-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 50px;
+  text-align: center;
+}
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.welcome-container button {
+  min-width: 120px;
+}
+.dashboard-section {
+  margin: 20px 0;
+}
+.back-button {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-d);
+}
+input[type="number"] { text-align: right; }
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
+  width: 100%;
+  max-width: 100%;      /* for resize */
+  padding: 7px 10px;
+  margin: 8px 2px 10px 0;
+  border-radius: 20px;
+  border: 1px solid var(--bg-ll);
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--bg-ll);
+  color: var(--text);
+}
+input[type="password"] {
+  padding-right: 3rem;     /* space for the eye icon to reveal the password */
+}
+.pw-cont {
+  display: flex;
+  align-items: center;
+}
+.icon-eye-pw {
+  position: absolute;
+  right: 2rem;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 4rem;
+  position: fixed;
+  top: calc(50% - 2rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--primary-d);
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}
+.icon-button {
+  background: var(--primary-d);
+  border-radius: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text);
+  touch-action: manipulation;
+}
+.icon-button svg {
+  pointer-events: none; /* avoid svg(icon) gets the touch event on mobile */
+}
+.d-flex { display: flex; }
+.new-recipe, .use-recipe {
+  margin-top: 5px;
+  width: 100%;
+}
+.use-recipe .d-flex .instructions {
+  font-size: 0.7rem;
+  text-align: center;
+}
+.use-recipe p.recipe-mu {
+  align-content: center;
+  padding: 0.5rem;
+}
+.new-recipe h2, .use-recipe h2, .profile-cont .profile-title h2 {
+  text-align: center;
+  max-width: 80%;
+  overflow-wrap: break-word;
+  padding: 0 3rem;
+  max-height: 7rem;
+  overflow: auto;
+}
+.new-recipe .new-rec-title {
+  margin: 1em 0;
+}
+.new-recipe .recipe-quantity, .use-recipe .recipe-quantity {
+  display: flex;
+  align-items: center;
+}
+.use-recipe .owner {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.list .list-item, .list .list-item .content {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-ll);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 0.2rem;
+}
+.list .list-item .sort-handler {
+  /* position: absolute; */
+  z-index: 3;
+  padding: 0 0.5rem;
+  align-items: center;
+  display: flex;
+  user-select: none;
+  touch-action: none;
+}
+.list .list-item.divider {
+  background-color: var(--gold);
+  color: var(--bg-ll);
+}
+.list .list-item.selected { background-color: var(--primary-l); }
+.right { text-align: right!important; }
+.center { text-align: center!important; }
+.left { text-align: left!important; }
+.d-none { display: none!important; }
+.list-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ingredients-list .ingredient .ing-info { 
+  width: 15%;
+  align-content: center;
+  padding: 0 0.1rem;
+  margin-bottom: 0;
+}
+.ingredients-list .ingredient .ing-info.name { width: 70%; }
+.ingredients-list .ingredient .ing-notes { margin: 0; font-size: 0.7rem; }
+.new-recipe .bottom-btn, .use-recipe .bottom-btn, .profile-cont .bottom-btn {
+  position: fixed;
+  bottom: 1rem;
+  width: calc(100% - 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  /* box-shadow: 0px 14px 0px 20px var(--bg); */    /* maybe in android cause color conflicts */
+  /* background-color: var(--bg); */                /* maybe in android cause color conflicts */
+}
+.new-recipe .bottom-btn .btn, .use-recipe .bottom-btn .btn, .profile-cont .bottom-btn .btn {
+  text-align: center;
+  background-color: var(--primary-d);
+  color: var(--text);
+  padding: 0.5rem;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  max-height: 10rem;
+}
+.use-recipe div.notes {
+  width: 100%;
+}
+#fondo-dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+#dialog {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 20px;
+  min-width: 90vw;
+  max-width: 90vw;
+}
+#dialog .title {
+  background-color: var(--primary-d);
+  height: 2rem;
+  border-radius: 20px 20px 0 0;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+#dialog .title span { margin: 0;}
+#dialog .dialog-content {
+  padding: 1rem;
+}
+#filter-container {
+  display: flex;
+  align-items: center;
+}
+#filter-container input.filter-recipes { padding-right: 3rem; }
+#filter-container .icon-search {
+  position: absolute;
+  right: 2rem;
+}
+.recipe-quantity .rec-mu { width: 25%; }
+.recipe-quantity .rec-qty { width: 25%; }
+.recipe-quantity .rec-category { width: 50%; }
+.three-dots {
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-d);
+}
+.sb-menu {
+  background-color: var(--bg-l);
+  position: fixed;
+  left: 0;
+  padding: 3rem 0;
+  height: 100vh;
+  z-index: 9;
+  top: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.sb-menu .close-sb {
+  text-align: right;
+  padding: 0.7rem;
+  
+}
+.sb-menu .sb-opt {
+  padding: 0.5rem 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.sb-menu .sb-opt.disabled { opacity: 0.5; }
+.sb-menu .sb-opt span {
+  margin-left: 0.5rem;
+}
+.profile-cont {
+  width: 100%;
+}
+.inline-button {
+  background-color: var(--primary-d);
+  border-radius: 20px;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+.basic-switch {
+  display: flex;
+  background-color: var(--bg-ll);
+  border-radius: 20px;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.basic-switch .basic-switch-btn { 
+  width: 100%; 
+  text-align: center; 
+  border-radius: 20px; 
+  padding: 0.5rem 0; 
+  flex: 1;
+  /* z-index: 1; */
+  position: relative;
+}
+.basic-switch .basic-switch-btn.active { 
+  font-weight: 700; 
+  /* background-color: var(--primary-d);  */
+}
+.basic-switch .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% / var(--buttons));
+  background: var(--primary-d);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+.cont-exchange {
+  width: 100%;
+  /* padding: 1rem; */
+  text-align: center;
+}
