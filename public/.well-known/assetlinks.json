@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.web.xsplit_0.twa",
+        "sha256_cert_fingerprints": ["2F:09:BE:05:E6:22:F6:75:C5:E0:71:83:29:8D:52:D4:37:E5:A2:8A:91:8F:CB:74:E7:35:18:81:55:E6:AE:6A"]
+      }
+    }]
