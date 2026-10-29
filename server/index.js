@@ -76,7 +76,7 @@ app.get("/all-from-collection", async (req, res) => {
     const recipes = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     res.status(200).json(recipes);
   } catch (error) {
-    console.error("Error in /all-recipes:", error);
+    console.error("Error in /all-from-collection:", error);
     res.status(500).json({ error: error.message });
   }
 });
